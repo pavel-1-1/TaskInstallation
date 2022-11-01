@@ -53,11 +53,10 @@ public class Main {
     private static String createCatalog(String newCatalog) {
         File catalog = new File(newCatalog);
         Date date = new Date();
-        if (catalog.mkdir()) {
-            System.out.println("true");
+        catalog.mkdir();
+        if (catalog.isFile()) {
             return "папка-" + newCatalog + " true" + " : " + date + "\n";
         } else {
-            System.out.println("false");
             return "папка-" + newCatalog + " false" + " : " + date + "\n";
         }
     }
